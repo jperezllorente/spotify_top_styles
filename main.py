@@ -233,7 +233,7 @@ Afterwards, we create a countplot with style as x-axis and playlist as hue
 '''
 
 sns.countplot(y="style", data = year_ev, hue = 'playlist' ,palette="icefire",
-              order=data_final["style"].value_counts().iloc[:30].index)
+              order=year_ev["style"].value_counts().iloc[:30].index)
 
 
 
