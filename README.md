@@ -1,7 +1,5 @@
 # Spotify top songs from 2019 to 2020
 
-![picture](C:\Users\juanp\Ironhack\pipelines-project\musica.png)
-
 
 **Overview**
 
