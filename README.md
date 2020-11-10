@@ -39,6 +39,7 @@ In Spain there is a certain preference towards latin music, including reggaeton,
 
 
 **Further comments**
+
 In order to use Spotify's API wihtout having to do all the process of authorization, python offers a library that makes this process much easier. This library is [spotipy](https://spotipy.readthedocs.io/en/2.16.1/).
 
 A way to enrich this analysis could be to use the information of other sites like itune or soundcloud, with the objective of comparing how preferences in music differ in differente music browsers.
