@@ -8,7 +8,7 @@ import pandas as pd
 # In this section we do a little cleaning of the original data (top50.csv)
 
 
-data = pd.read_csv("C:\\Users\\juanp\\Ironhack\\pipelines-project\\src\\top50.csv", encoding='cp1252')
+data = pd.read_csv("C:\\Users\\juanp\\Ironhack\\pipelines-project\\data\\top50.csv", encoding='cp1252')
 
 
 data = data.drop(["Unnamed: 0","Beats.Per.Minute", "Energy", "Danceability", "Loudness..dB..", "Liveness", "Valence.","Length.", "Acousticness..", "Speechiness.", "Popularity"], axis = 1)
