@@ -26,12 +26,12 @@ data['style'] = data['style'].replace(['reggaeton flow' ], 'reggaeton')
 
 data
 
-'Create and add the playlist column to the df'
+#Create and add the playlist column to the df'
 
 fr.add_playlist('GLB_top 2019', 50, data)
 
 
-'Obtain the percentage of each music style by playlist and add as column to df'
+#Obtain the percentage of each music style by playlist and add as column to df'
 
 fr.perce(data, 50)
 
@@ -40,7 +40,7 @@ data
 #EXTRACTING INFORMATION FROM SPOTIFY 
 
 
-    ## TOP 30 SPAIN - top 30 songs from Spotify in 2020
+## TOP 30 SPAIN - top 30 songs from Spotify in 2020
 
 url = "https://open.spotify.com/playlist/37i9dQZEVXbNFJfN1Vw8d9"
 
@@ -53,27 +53,20 @@ title = sc.findall_title(ESP)
 ESP_top30 = fr.dataframe(title, author)
 
 
-'''
-Some of the artists have an extra space and • between names, so we proceed to change them
-for nothing ('')
+#Some of the artists have an extra space and • between names, so we proceed to change them
+#for nothing ('')
 
-'''
 
 ESP_top30.artists = ESP_top30.artists.replace(to_replace = r'\s\•', value = '', regex = True)
 
 
-'''
-As it is explained in the frame.py, the styles have been found manually, so we have to create a list and store them inside
-in order to add them to the dataframe
 
-'''
-
-style = ['rumbachata', 'trap', 'rumbachatea', 'latin', 'reggaeton',
-         'trap', 'reggaeton', 'trap', 'latin', 'trap', 'latin', 'latin', 'reggaeton', 'reggaeton', 'latin', 
-         'latin', 'latin', 'trap','reggaeton', 'latin', 'latin', 'reggaeton', 'latin', 'reggaeton', 'trap', 'rumbachata', 
-          'reggaeton', 'latin', 'rap', 'trap']
+#As it is explained in the frame.py, the styles have been found manually, so we have to create a list and store them inside
+#in order to add them to the dataframe
 
 
+
+style = ['rumbachata', 'trap', 'rumbachata', 'latin', 'reggaeton','trap', 'reggaeton', 'trap', 'latin', 'trap', 'latin', 'latin', 'reggaeton', 'reggaeton', 'latin', 'latin', 'latin', 'trap','reggaeton', 'latin', 'latin', 'reggaeton', 'latin', 'reggaeton', 'trap', 'rumbachata',  'reggaeton', 'latin', 'rap', 'trap']
 
 'We add the style column to the df'
 
@@ -82,23 +75,20 @@ fr.add_col(ESP_top30, style)
 
 'We set the column names'
 
-fr_colnames(ESP_top50,'title','artists', 'style' )
+fr.col_names(ESP_top30,'title','artists', 'style' )
 
 
 'Create and add the playlist column to the df'
 
-fr.add_playlist('ESP_top 2020', 30, ESP_top50)
+fr.add_playlist('ESP_top 2020', 30, ESP_top30)
 
 
 'Obtain the percentage of each music style by playlist and add as column to df'
 
-perce(ESP_top30, 30)
+fr.perce(ESP_top30, 30)
 
 
-
-
-
-    ## TOP 30 USA - top 30 songs from Spotify in 2020
+## TOP 30 USA - top 30 songs from Spotify in 2020
 
 url = "https://open.spotify.com/playlist/37i9dQZEVXbLRQDuF5jeBp"
 
@@ -110,40 +100,37 @@ title = sc.findall_title(USA)
 
 USA_top30 = fr.dataframe(title, author)
 
-USA_top50.artists = USA_top50.artists.replace(to_replace = r'\s\•', value = '', regex = True)
+USA_top30.artists = USA_top30.artists.replace(to_replace = r'\s\•', value = '', regex = True)
 
 
-'We create the list with the music styles for the USA top songs from SPotify'
+#We create the list with the music styles for the USA top songs from SPotify
 
-style = ['pop', 'hip hop', 'trap', 'hip hop', 'hip hop', 'hip hop', 'hip hop', 'pop', 'hip hop', 'hip hop', 'pop', 'hip hop', 
-        'hip hop', 'edm', 'pop', 'hip hop', 'country', 'latin', 'rap', 'pop', 'pop', 'pop', 'pop', 'hip hop', 'pop',
-        'hip hop', 'pop', 'hip hop', 'hip hop', 'pop' ]
+style = ['pop', 'hip hop', 'trap', 'hip hop', 'hip hop', 'hip hop', 'hip hop', 'pop', 'hip hop', 'hip hop', 'pop', 'hip hop', 'hip hop', 'edm', 'pop', 'hip hop', 'country', 'latin', 'rap', 'pop', 'pop', 'pop', 'pop', 'hip hop', 'pop','hip hop', 'pop', 'hip hop', 'hip hop', 'pop' ]
 
 
-'We add the style column to the df'
+#We add the style column to the df
 
-add_col(USA_top50, style)
-
-
-'We set the column names'
-
-col_names(USA_top50, 'title','artists', 'style')
+fr.add_col(USA_top30, style)
 
 
-'Create and add the playlist column to the df'
+#We set the column names
 
-fr.add_playlist('USA_top 2020', 30, USA_top50)
-
-
-'Obtain the percentage of each music style by playlist and add as column to df'
-
-perce(USA_top30, 30)
+fr.col_names(USA_top30, 'title','artists', 'style')
 
 
+#Create and add the playlist column to the df
+
+fr.add_playlist('USA_top 2020', 30, USA_top30)
 
 
+#Obtain the percentage of each music style by playlist and add as column to df'
 
-    ## TOP 30 GLOBAL - top 30 songs from Spotify in 2020
+fr.perce(USA_top30, 30)
+
+USA_top30
+
+
+## TOP 30 GLOBAL - top 30 songs from Spotify in 2020
 
 url = "https://open.spotify.com/playlist/37i9dQZEVXbMDoHDwVN2tF"
 
@@ -156,34 +143,32 @@ title = sc.findall_title(GLB)
 GLB_top30_2020 = fr.dataframe(title, author)
 
 
-GLB_top50_2020.artists = GLB_top50_2020.artists.replace(to_replace = r'\s\•', value = '', regex = True)
+GLB_top30_2020.artists = GLB_top30_2020.artists.replace(to_replace = r'\s\•', value = '', regex = True)
 
 
-'Create the list with the music styles'
+#Create the list with the music styles
 
-style = ['trap', 'pop', 'hip hop', 'hip hop', 'hip hop','pop', 'latin', 'pop', 'hip hop', 'pop', 'pop', 'hip hop', 'pop', 'edm', 
-         'pop', 'latin', 'reggaeton', 'pop', 'hip hop', 'pop', 'latin', 'reggaeton', 'latin', 'hip hop', 'latin', 'pop',
-         'trap', 'pop', 'pop', 'trap']
+style = ['trap', 'pop', 'hip hop', 'hip hop', 'hip hop','pop', 'latin', 'pop', 'hip hop', 'pop', 'pop', 'hip hop', 'pop', 'edm', 'pop', 'latin', 'reggaeton', 'pop', 'hip hop', 'pop', 'latin', 'reggaeton', 'latin', 'hip hop', 'latin', 'pop','trap', 'pop', 'pop', 'trap']
 
 
-'Add the style column to the df'
+#Add the style column to the df
 
-add_col(GLB_top50_2020, style)
-
-
-'Set column names'
-
-GLB_top50_2020.columns = ['title', 'artists', 'style']
+fr.add_col(GLB_top30_2020, style)
 
 
-'Create and add the playlist column to the df'
+#Set column names
+
+GLB_top30_2020.columns = ['title', 'artists', 'style']
+
+
+#Create and add the playlist column to the df
 
 fr.add_playlist('GLB_top 2020', 30, GLB_top30_2020)
 
 
-'Obtain the percentage of each music style by playlist and add as column to df'
+#Obtain the percentage of each music style by playlist and add as column to df'
 
-perce(GLB_top30_2020, 30)
+fr.perce(GLB_top30_2020, 30)
 
 
 
@@ -247,7 +232,7 @@ includin reggaeton, latin music and trap
 
 '''
 
-sns.countplot(ESP_top50["style"])
+sns.countplot(ESP_top30["style"])
 
 
 
@@ -259,7 +244,7 @@ In this case we can see that pop music and hip hop are the clear leaders in USA
 
 '''
 
-sns.countplot(USA_top50["style"])
+sns.countplot(USA_top30["style"])
 
 
 
